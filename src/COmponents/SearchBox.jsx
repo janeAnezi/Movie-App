@@ -1,9 +1,9 @@
 import React from 'react';
 import { IoSearch } from "react-icons/io5";
 
-export default function SearchBox() {
+export default function SearchBox(props) {
     return(
-         <div className="bg-white py-1.5 mt-3 rounded-lg text-blue-950 flex">
+         <div className="bg-white py-1.5 mt-3 mb-3 rounded-lg text-blue-950 flex">
             <input 
                 className='placeholder:px-2 inline-block w-32' type="search" 
                 value={props.value} placeholder='seach movies' 

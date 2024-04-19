@@ -9,19 +9,25 @@ function App() {
   const [movies, setMovies] = useState([])
   const [searchValue, setSearchValue] = useState('')
 
-  const getMovieRequest = async() => {
-    const url = 'http://www.omdbapi.com/?s=alice&apikey=9591cb8';
-    const response = await fetch(url);
-    const responseJson = await response.json();
-
-    console.log(responseJson);
-
-    setMovies(responseJson.Search);
-
-  }
+  const getMovieRequest = async (searchValue) => {
+    try {
+      const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=9591cb8`;
+      const response = await fetch(url);
+      const responseJson = await response.json();
+  
+      if (responseJson.Search) {
+        setMovies(responseJson.Search);
+      } else {
+        setMovies([]);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+  
 
   useEffect(() => {
-    getMovieRequest();
+    getMovieRequest(searchValue);
   }, [searchValue])
 
   return (
