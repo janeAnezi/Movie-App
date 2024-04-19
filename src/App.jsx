@@ -7,7 +7,7 @@ function App() {
   const [movies, setMovies] = useState([])
 
   const getMovieRequest = async() => {
-    const url = 'http://www.omdbapi.com/?s=star wars&apikey=9591cb8';
+    const url = 'http://www.omdbapi.com/?s=avengers&apikey=9591cb8';
     const response = await fetch(url);
     const responseJson = await response.json();
 
@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <div className=' bg-indigo-950 text-white'>
-        <NavBar />
+        <NavBar heading="MOVIES"/>
         <MovieList  movies={movies}/>
          
       </div>
