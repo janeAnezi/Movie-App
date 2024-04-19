@@ -30,8 +30,11 @@ function App() {
 
   return (
     <>
-      <NavBar />
-      <MovieList  movies={movies}/>
+      <div className='bg-indigo-950 text-white'>
+        <NavBar />
+        <MovieList  movies={movies}/>
+      </div>
+      
     </>
   )
 }
