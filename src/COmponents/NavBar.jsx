@@ -1,12 +1,12 @@
 import React from  'react';
 import { IoSearch } from "react-icons/io5";
 
-export default function NavBar(props) {
+export default function NavBar() {
     return(
         <> 
             <div className=" bg-blue-950 text-yellow-300 h-20 pt-4 px-6">
                 <nav className="flex text-center justify-between flex-wrap">
-                    <div className="text-2xl">{props.heading}</div>
+                    <div className="text-2xl">LATEST MOVIES</div>
                     <ul className="flex space-x-3">
                         <li>LATEST</li>
                         <li>POPULAR</li>

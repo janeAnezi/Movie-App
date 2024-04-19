@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <div className=' bg-indigo-950 text-white'>
-        <NavBar heading="MOVIES"/>
+        <NavBar />
         <MovieList  movies={movies}/>
          
       </div>
