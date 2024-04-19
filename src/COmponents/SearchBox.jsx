@@ -1,0 +1,15 @@
+import React from 'react';
+import { IoSearch } from "react-icons/io5";
+
+export default function SearchBox() {
+    return(
+         <div className="bg-white py-1.5 mt-3 rounded-lg text-blue-950 flex">
+            <input 
+                className='placeholder:px-2 inline-block w-32' type="search" 
+                value={props.value} placeholder='seach movies' 
+                onChange={(event) => props.setSearchValue(event.target.value)}
+            />
+            <IoSearch className='mr-2 mt-1 w-7' />
+            </div> 
+    )
+}
