@@ -3,8 +3,8 @@ import { IoSearch } from "react-icons/io5";
 export default function NavBar() {
     return(
         <> 
-            <div className="bg-blue-950 text-yellow-300 h-20 pt-4 px-6">
-                <nav className="flex text-center justify-between">
+            <div className=" bg-blue-950 text-yellow-300 h-20 pt-4 px-6">
+                <nav className="flex text-center justify-between flex-wrap">
                     <div className="text-2xl">MOVIE~BROWSER</div>
                     <ul className="flex space-x-3">
                         <li>LATEST</li>
