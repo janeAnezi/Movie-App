@@ -4,6 +4,7 @@ import MovieList from './Components/MovieList'
 import './index.css'
 import MovieSubHeading from './Components/MovieSubHeading'
 import SearchBox from './Components/SearchBox'
+import AddToFavourites from './Components/AddToFavourites'
 
 function App() {
   const [movies, setMovies] = useState([])
@@ -38,7 +39,7 @@ function App() {
           <MovieSubHeading heading="MOVIES" />
           <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
         </div>
-        <MovieList  movies={movies}/>
+        <MovieList  movies={movies} favouriteComponent={AddToFavourites}/>
          
       </div>
       
