@@ -8,6 +8,7 @@ import AddToFavourites from './Components/AddToFavourites'
 
 function App() {
   const [movies, setMovies] = useState([])
+  const [favourites, setFavourites] = useState([])
   const [searchValue, setSearchValue] = useState('')
 
   const getMovieRequest = async (searchValue) => {
@@ -26,21 +27,34 @@ function App() {
     }
   };
   
-
   useEffect(() => {
     getMovieRequest(searchValue);
   }, [searchValue])
+
+
+  const addFavouriteMovie = (movie) => {
+    const newFavouriteList = [ ...favourites, movie];
+    setFavourites(newFavouriteList);
+  }
+
 
   return (
     <>
       <div className=' bg-indigo-950 text-white'>
         <NavBar />
+
         <div className='flex justify-evenly'>
           <MovieSubHeading heading="MOVIES" />
           <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
         </div>
-        <MovieList  movies={movies} favouriteComponent={AddToFavourites}/>
-         
+
+        <MovieList  movies={movies} handleFavouritesClick={addFavouriteMovie} favouriteComponent={AddToFavourites}/>
+
+        <div className='flex justify-evenly'>
+          <MovieSubHeading heading="FAVOURITES" />
+        </div>
+
+        <MovieList  movies={favourites} handleFavouritesClick={addFavouriteMovie} favouriteComponent={AddToFavourites}/>
       </div>
       
     </>
