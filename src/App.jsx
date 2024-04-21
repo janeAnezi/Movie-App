@@ -60,8 +60,9 @@ function App() {
         <div className='flex justify-evenly'>
           <MovieSubHeading heading="MOVIES" />
           <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
+          <MovieSubHeading heading="CATEGORIES" />
         </div>
-
+        
         <MovieList  movies={movies} handleFavouritesClick={addFavouriteMovie} favouriteComponent={AddToFavourites}/>
 
         <div className='flex justify-evenly'>
