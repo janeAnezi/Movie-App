@@ -14,6 +14,7 @@ function App() {
 
   const getMovieRequest = async (searchValue) => {
     try {
+      // const url = `https://api.themoviedb.org/3/movie/11?api_key=89453aec0dad86e73c019c6bbe43cb21`;
       const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=9591cb8`;
       const response = await fetch(url);
       const responseJson = await response.json();
@@ -27,6 +28,7 @@ function App() {
       console.error('Error fetching data:', error);
     }
   };
+
   
   useEffect(() => {
     getMovieRequest(searchValue);
@@ -60,7 +62,6 @@ function App() {
         <div className='flex justify-evenly'>
           <MovieSubHeading heading="MOVIES" />
           <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-          <MovieSubHeading heading="CATEGORIES" />
         </div>
         
         <MovieList  movies={movies} handleFavouritesClick={addFavouriteMovie} favouriteComponent={AddToFavourites}/>
