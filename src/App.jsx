@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import NavBar from './Components/NavBar'
+// import NavBar from './Components/NavBar'
 import MovieList from './Components/MovieList'
 import './index.css'
 import MovieSubHeading from './Components/MovieSubHeading'
@@ -8,6 +8,7 @@ import AddToFavourites from './Components/AddToFavourites'
 import RemoveFavourites from './Components/RemoveFavourites'
 import Rows from './Components/Rows';
 import requests from './request';
+import Banner from './Components/Banner'
 
 function App() {
   const [movies, setMovies] = useState([])
@@ -59,15 +60,16 @@ function App() {
   return (
     <>
       <div className=' bg-indigo-950 text-white'>
-        <NavBar />
-
-        <div className='flex justify-evenly'>
-          <MovieSubHeading heading="MOVIES" />
+        <Banner />
+        <div className='absolute top-0 right-10 pt-3 '>
           <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
         </div>
+        <MovieList  movies={movies} handleFavouritesClick={addFavouriteMovie} favouriteComponent={AddToFavourites}/>
         <Rows title="NETCHILL ORIGINALS" fetchURL={requests.fetchOriginals} />
         <Rows title="Trending Now" fetchURL={requests.fetchTrending}/>
-        <MovieList  movies={movies} handleFavouritesClick={addFavouriteMovie} favouriteComponent={AddToFavourites}/>
+        <Rows title="Action" fetchURL={requests.fetchActionMovies} />
+        <Rows title="Romance" fetchURL={requests.fetchRomanceMovies} />
+        
 
         <div className='flex justify-evenly'>
           <MovieSubHeading heading="FAVOURITES" />
