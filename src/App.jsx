@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // import NavBar from './Components/NavBar'
 import MovieList from "./Components/MovieList";
-
 import './index.css';
 import MovieSubHeading from './Components/MovieSubHeading';
 import SearchBox from './Components/SearchBox';
