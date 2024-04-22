@@ -30,9 +30,6 @@ function Rows( { title, fetchURL}) {
                 <div key={index} className="flex-shrink-0 px-2 relative transition-transform hover:cursor-pointer hover:scale-110">
                     <img src={`${base_url}${movie.poster_path}`} alt={movie.name} className="w-40" />
                     <p className="text-center">{movie.name}</p>
-                    {/* <div onClick={() => props.handleFavouritesClick(movie)} className="flex justify-center items-center absolute bg-slate-900 h-20 w-[300px] transition ease-in-out opacity-0 bottom-10 text-sm text-center hover:opacity-90 hover:text-white">
-                        <favouriteComponent />
-                    </div> */}
                 </div>
             ))}
         </div>
