@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 // import NavBar from './Components/NavBar'
-import MovieList from './Components/MovieList'
-import './index.css'
-import MovieSubHeading from './Components/MovieSubHeading'
-import SearchBox from './Components/SearchBox'
-import AddToFavourites from './Components/AddToFavourites'
-import RemoveFavourites from './Components/RemoveFavourites'
+import MovieList from "./Components/MovieList";
+
+import './index.css';
+import MovieSubHeading from './Components/MovieSubHeading';
+import SearchBox from './Components/SearchBox';
+import AddToFavourites from './Components/AddToFavourites';
+import RemoveFavourites from './Components/RemoveFavourites';
 import Rows from './Components/Rows';
 import requests from './request';
-import Banner from './Components/Banner'
+import Banner from './Components/Banner';
 
 function App() {
   const [movies, setMovies] = useState([])
@@ -17,7 +18,6 @@ function App() {
 
   const getMovieRequest = async (searchValue) => {
     try {
-      // const url = `https://api.themoviedb.org/3/movie/11?api_key=89453aec0dad86e73c019c6bbe43cb21`;
       const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=9591cb8`;
       const response = await fetch(url);
       const responseJson = await response.json();
