@@ -6,6 +6,8 @@ import MovieSubHeading from './Components/MovieSubHeading'
 import SearchBox from './Components/SearchBox'
 import AddToFavourites from './Components/AddToFavourites'
 import RemoveFavourites from './Components/RemoveFavourites'
+import Rows from './Components/Rows';
+import requests from './request';
 
 function App() {
   const [movies, setMovies] = useState([])
@@ -63,7 +65,8 @@ function App() {
           <MovieSubHeading heading="MOVIES" />
           <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
         </div>
-        
+        <Rows title="NETCHILL ORIGINALS" fetchURL={requests.fetchOriginals} />
+        <Rows title="Trending Now" fetchURL={requests.fetchTrending}/>
         <MovieList  movies={movies} handleFavouritesClick={addFavouriteMovie} favouriteComponent={AddToFavourites}/>
 
         <div className='flex justify-evenly'>
